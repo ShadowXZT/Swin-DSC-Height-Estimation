@@ -34,8 +34,9 @@ Please refer to [get_started.md](https://github.com/open-mmlab/mmsegmentation/bl
 ### Training
 
 #TODO
+```
 
-## Citing Swin Transformer
+## Citing paper
 ```
 @article{liu2021Swin,
   title={THE Benchmark: Transferable Representation Learning for Monocular Height Estimation},
