@@ -38,7 +38,7 @@ Please refer to [get_started.md](https://github.com/open-mmlab/mmsegmentation/bl
 
 ## Citing paper
 ```
-@article{liu2021Swin,
+@article{xiong2022THE,
   title={THE Benchmark: Transferable Representation Learning for Monocular Height Estimation},
   author={Zhitong Xiong, Wei Huang, Jingtao Hu, Yilei Shi, Qi Wang, Xiao Xiang Zhu},
   journal={arXiv preprint arxiv:2112.14985},
