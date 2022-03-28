@@ -1,14 +1,14 @@
-# Swin Transformer for Semantic Segmentaion
+# Swin Transformer for Monocular Height Estimation
 
-This repo contains the supported code and configuration files to reproduce semantic segmentaion results of [Swin Transformer](https://arxiv.org/pdf/2103.14030.pdf). It is based on [mmsegmentaion](https://github.com/open-mmlab/mmsegmentation/tree/v0.11.0).
+This repo contains the supported code and configuration files to reproduce results of [THE Benchmark](https://arxiv.org/abs/2112.14985). It is based on [Swin Transformer](https://arxiv.org/abs/2103.14030).
 
 ## Updates
 
-***04/12/2021*** Initial commits
+***28/03/2022*** Initial commits
 
 ## Results and Models
 
-### ADE20K
+### GTAH
 
 | Backbone | Method | Crop Size | Lr Schd | mIoU | mIoU (ms+flip) | #params | FLOPs | config | log | model |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -18,59 +18,29 @@ This repo contains the supported code and configuration files to reproduce seman
 
 **Notes**: 
 
-- **Pre-trained models can be downloaded from [Swin Transformer for ImageNet Classification](https://github.com/microsoft/Swin-Transformer)**.
+- **Pre-trained models can be downloaded from [Swin Transformer for Monocular Height Estimation](coming soon)**.
 - Access code for `baidu` is `swin`.
 
 ## Usage
 
 ### Installation
 
-Please refer to [get_started.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/get_started.md#installation) for installation and dataset preparation.
+Please refer to [get_started.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/get_started.md#installation) for installation.
 
 ### Inference
 ```
-# single-gpu testing
-python tools/test.py <CONFIG_FILE> <SEG_CHECKPOINT_FILE> --eval mIoU
-
-# multi-gpu testing
-tools/dist_test.sh <CONFIG_FILE> <SEG_CHECKPOINT_FILE> <GPU_NUM> --eval mIoU
-
-# multi-gpu, multi-scale testing
-tools/dist_test.sh <CONFIG_FILE> <SEG_CHECKPOINT_FILE> <GPU_NUM> --aug-test --eval mIoU
-```
+#TODO
 
 ### Training
 
-To train with pre-trained models, run:
-```
-# single-gpu training
-python tools/train.py <CONFIG_FILE> --options model.pretrained=<PRETRAIN_MODEL> [model.backbone.use_checkpoint=True] [other optional arguments]
-
-# multi-gpu training
-tools/dist_train.sh <CONFIG_FILE> <GPU_NUM> --options model.pretrained=<PRETRAIN_MODEL> [model.backbone.use_checkpoint=True] [other optional arguments] 
-```
-For example, to train an UPerNet model with a `Swin-T` backbone and 8 gpus, run:
-```
-tools/dist_train.sh configs/swin/upernet_swin_tiny_patch4_window7_512x512_160k_ade20k.py 8 --options model.pretrained=<PRETRAIN_MODEL> 
-```
-
-**Notes:** 
-- `use_checkpoint` is used to save GPU memory. Please refer to [this page](https://pytorch.org/docs/stable/checkpoint.html) for more details.
-- The default learning rate and training schedule is for 8 GPUs and 2 imgs/gpu.
-
+#TODO
 
 ## Citing Swin Transformer
 ```
 @article{liu2021Swin,
-  title={Swin Transformer: Hierarchical Vision Transformer using Shifted Windows},
-  author={Liu, Ze and Lin, Yutong and Cao, Yue and Hu, Han and Wei, Yixuan and Zhang, Zheng and Lin, Stephen and Guo, Baining},
-  journal={arXiv preprint arXiv:2103.14030},
-  year={2021}
+  title={THE Benchmark: Transferable Representation Learning for Monocular Height Estimation},
+  author={Zhitong Xiong, Wei Huang, Jingtao Hu, Yilei Shi, Qi Wang, Xiao Xiang Zhu},
+  journal={arXiv preprint arxiv:2112.14985},
+  year={2022}
 }
 ```
-
-## Other Links
-
-> **Image Classification**: See [Swin Transformer for Image Classification](https://github.com/microsoft/Swin-Transformer).
-
-> **Object Detection**: See [Swin Transformer for Object Detection](https://github.com/SwinTransformer/Swin-Transformer-Object-Detection).
